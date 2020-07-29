@@ -1,1 +1,61 @@
-hello DeathAgentZ!!!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>四季跳转</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    table {
+        border-top: 1px red solid;
+        border-left: 1px red solid;
+        margin: 0px auto;
+        width: 310px;
+        height: 320px;
+    }
+
+
+    td {
+        border-right: 1px red solid;
+        border-bottom: 1px red solid;
+        font-size: 1em;
+        text-align: center;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+        padding: 5px;
+    }
+
+
+</style>
+<body>
+<table id="border" cellpadding="0" cellspacing="0">
+    <tr>
+        <td><img src="../img/Spring.jpg"></td>
+        <td><img src="../img/Summer.jpg"></td>
+    </tr>
+    <tr>
+        <td><a href="#" onclick="location.replace('spring.html')">春天</a></td>
+        <td><a href="#" onclick="location.replace('spring.html')">夏天</a></td>
+    </tr>
+    <tr>
+        <td><img src="../img/Fall.jpg"></td>
+        <td><img src="../img/Winter.jpg"></td>
+    </tr>
+    <tr>
+        <td><a href="#" onclick="location.replace('spring.html')">秋天</a></td>
+        <td><a href="#" onclick="location.replace('spring.html')">冬天</a></td>
+    </tr>
+    <tr>
+        <td colspan="2"><a href="#" onclick="location.reload()">刷新页面</a></td>
+    </tr>
+</table>
+</body>
+</html>
