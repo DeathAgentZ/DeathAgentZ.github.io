@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>根据select下拉框中选项改变div颜色</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    #border{
+        margin: 0px auto;
+        width: 500px;
+        height: 400px;
+        border: 1px red solid;
+    }
+    #color{
+        margin: 0px auto;
+        width: 150px;
+        height: 150px;
+        border: 1px solid black;
+        float: right;
+        position: relative;
+        top: 25%;
+        right: 5%;
+    }
+    #choose{
+        margin: 0px auto;
+        width: 220px;
+        height: 150px;
+        float: left;
+        position: relative;
+        top: 25%;
+        left: 5%;
+    }
+    select{
+        width: 100px;
+        position: relative;
+        float: left;
+        height: 2em;
+    }
+    button{
+        width: 50px;
+        position: relative;
+        float: left;
+        left: 15px;
+    }
+    #button2{
+        left: 20px;
+    }
+</style>
+<script>
+    // 定义颜色数组
+    var arr = ["red","black","pink","blue","green","yellow"];
+
+    window.onload=function () {
+        var select = document.getElementById("select1");
+        var str = "";
+        for(var i=0;i<arr.length;i++){
+            str += "<option value='" + arr[i] +"'>" + arr[i] + "</option>";
+        }
+        select.innerHTML=str;
+    }
+
+    // 通过点击按钮来改变颜色
+    function button2() {
+        // 获取select复选框的值
+        var choose = document.getElementById("select1").value;
+        var color = document.getElementById("color");
+        color.style.backgroundColor=choose;
+    }
+
+
+    // 通过点击option来更改颜色
+    function change() {
+        var color = document.getElementById("color");
+        var choose = document.getElementById("select1").value;
+        color.style.backgroundColor=choose;
+    }
+
+    // 随机设置颜色
+    function button1(){
+        var random = parseInt(Math.random()*7);
+        console.log(random);
+        var color = document.getElementById("color");
+        color.style.backgroundColor=arr[random];
+    }
+
+</script>
+<body>
+    <div id="border">
+        <div id="color"></div>
+        <div id="choose">
+            <select id="select1" onchange="change();"></select>
+            <button id="button1" onclick="button1();">随机</button>
+            <button id="button2" onclick="button2();">确认</button>
+        </div>
+    </div>
+</body>
+</html>
